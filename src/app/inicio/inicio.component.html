@@ -1,0 +1,102 @@
+<link href="/style.css" rel="stylesheet" type="text/css">
+<link href="/style.min.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+  integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Resume - Start Bootstrap Theme</title>
+
+  <!-- Custom fonts for this template -->
+  <link href="https://fonts.googleapis.com/css?family=Saira+Extra+Condensed:500,700" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Muli:400,400i,800,800i" rel="stylesheet">
+
+
+</head>
+
+<body id="page-top">
+
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top" id="sideNav"
+    style="background-color: #75e08e!important;">
+    <br><br><br><br><br><br><br>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav">
+        <img class="img-fluid img-profile rounded-circle mx-auto mb-2"
+          src="https://image.flaticon.com/icons/svg/119/119573.svg" style="width:200px" alt="">
+        <br><br><br>
+        <li class="nav-item">
+          <a style="color:#046f1c!important;" class="nav-link js-scroll-trigger" routerLink="">Inicio (Ver
+            Registros)</a>
+        </li>
+        <li class="nav-item">
+          <a style="color:#046f1c!important;" class="nav-link js-scroll-trigger" routerLink="agregar-registro">Agregar
+            Registro</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="container-fluid p-0">
+
+    <section class="resume-section p-3 p-lg-5 d-flex align-items-center" id="about">
+      <div class="w-100">
+        <h1 class="mb-0">Hola ¡Bienvenido! a la
+          <span class="text-primary" style="color:#046f1c!important;">Administración Municipal</span><br><br>
+        </h1>
+        <p class="lead mb-5">A continuación se muestran los registros diarios de longitud, latitud y caudal del río:
+        </p>
+
+        <table id="tabla-registros" style="padding: 20px!important;font-size: 18px;width: 70%;">
+          <tr>
+            <th>Id Registro</th>
+            <th>Fecha</th>
+            <th>Latitud</th>
+            <th>Longitud</th>
+            <th>Caudal</th>
+          </tr>
+          <tr *ngFor="let registro of Registros">
+            <td>{{registro.id}}</td>
+            <td>{{registro.day}}/{{registro.month}}/{{registro.year}}</td>
+            <td>{{registro.latitud}}</td>
+            <td>{{registro.longitud}}</td>
+            <td>{{registro.caudal}}</td>
+          </tr>
+        </table>
+
+        <div class="form-group">
+          <br>
+          <br>
+          <button type="submit" class="btn btn-primary btn-xl" id="sendMessageButton" style="background-color:#046f1c;"
+            (click)="mostrarRegistros()">Ver</button>
+        </div>
+
+      </div>
+    </section>
+
+  </div>
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Plugin JavaScript -->
+  <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+  <!-- Custom scripts for this template -->
+  <script src="js/resume.min.js"></script>
+
+</body>
+
+</html>
